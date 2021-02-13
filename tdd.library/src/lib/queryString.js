@@ -15,4 +15,4 @@ const parse = queryString =>
     }),
   )
 
-module.exports = { queryString, parse }
+export { queryString, parse }

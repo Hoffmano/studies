@@ -1,4 +1,4 @@
-const { queryString, parse } = require('../../queryString')
+import { queryString, parse } from '../../queryString'
 
 describe('QUERY STRING', function () {
   describe('OBJECT TO QUERY STRING', () => {

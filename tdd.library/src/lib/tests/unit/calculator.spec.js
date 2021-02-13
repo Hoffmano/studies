@@ -1,4 +1,4 @@
-const { sum } = require('../../calculator')
+import { sum } from '../../calculator'
 
 describe('CALCULATOR', () => {
   describe('SUM', () => {
