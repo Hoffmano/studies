@@ -1,4 +1,4 @@
-import { queryString, parse } from '../../queryString'
+import { queryString, parse } from '../../lib/queryString'
 
 describe('QUERY STRING', function () {
   describe('OBJECT TO QUERY STRING', () => {

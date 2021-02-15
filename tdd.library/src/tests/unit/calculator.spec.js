@@ -1,4 +1,4 @@
-import { sum } from '../../calculator'
+import { sum } from '../../lib/calculator'
 
 describe('CALCULATOR', () => {
   describe('SUM', () => {
