@@ -1,4 +1,4 @@
-import { forEach, equals } from 'ramda'
+import { gt, equals } from 'ramda'
 
 const getTotal = cart =>
   cart.reduce(
@@ -7,17 +7,16 @@ const getTotal = cart =>
   )
 
 const addItem = (cart, item) => {
-  let previousQuantity = 0
+  const foundItemIndex = cart.findIndex(cartItem =>
+    equals(cartItem.product, item.product),
+  )
 
-  forEach((cartItem, index) => {
-    if (equals(cartItem.product, item.product)) {
-      previousQuantity = cartItem.quantity
-      cart.splice(index, 1)
-    }
-  }, cart)
+  if (gt(foundItemIndex, -1)) {
+    cart[foundItemIndex].quantity += item.quantity
+  } else {
+    cart.push(item)
+  }
 
-  cart.push({ ...item, quantity: previousQuantity + item.quantity })
-  
   return cart
 }
 
