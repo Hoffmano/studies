@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CART should cleanup cart 1`] = `
+Object {
+  "items": Array [
+    Object {
+      "product": Object {
+        "price": 3000,
+        "title": "Shirt",
+      },
+      "quantity": 1,
+    },
+    Object {
+      "product": Object {
+        "price": 5000,
+        "title": "Tênis",
+      },
+      "quantity": 11,
+    },
+  ],
+  "total": 58000,
+}
+`;
+
+exports[`CART should remove some item from cart 1`] = `
+Object {
+  "items": Array [
+    Object {
+      "product": Object {
+        "price": 3000,
+        "title": "Shirt",
+      },
+      "quantity": 1,
+    },
+    Object {
+      "product": Object {
+        "price": 5000,
+        "title": "Tênis",
+      },
+      "quantity": 11,
+    },
+  ],
+  "total": 58000,
+}
+`;

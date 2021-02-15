@@ -12,6 +12,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/dinero.js": "^1.6.5",
+    "dinero.js": "^1.8.1",
     "ramda": "^0.27.1"
   },
   "devDependencies": {
@@ -22,6 +24,7 @@
     "@types/npm": "^2.0.31",
     "@types/ramda": "^0.27.38",
     "babel-jest": "^26.6.3",
-    "jest": "^26.6.3"
+    "jest": "^26.6.3",
+    "prettier": "^2.2.1"
   }
 }
