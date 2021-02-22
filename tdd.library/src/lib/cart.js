@@ -6,12 +6,25 @@ Money.defaultCurrency = 'BRL'
 Money.defaultPrecision = 2
 Money.defaultAmount = 0
 
-const getTotal = cart =>
-  cart.reduce(
+const getTotal = (cart, discount) => {
+  const total = cart.reduce(
     (accumulator, item) =>
-      accumulator.add(Money({ amount: item.quantity * item.product.price })),
+      accumulator.add(
+        Money({
+          amount: item.quantity * item.product.price,
+        }),
+      ),
     Money(),
   )
+
+  if (discount && discount.percentage && total.getAmount() > discount.minimum) {
+    const totalToDiscount = total.multiply(discount.percentage)
+
+    return total.subtract(totalToDiscount)
+  }
+
+  return total
+}
 
 const addItem = (cart, item, quantity = 1) => {
   if (quantity) item = { ...item, quantity: quantity }

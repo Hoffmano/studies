@@ -88,4 +88,20 @@ describe('CART', () => {
     expect(getTotal(updatedCart).getAmount()).toEqual(0)
     expect(checkoutCart).toMatchSnapshot()
   })
+
+  describe('SPECIAL CONDITIONS', () => {
+    it('should apply a discount to cart if quantity is higher than minimum quantity', () => {
+      let cart = []
+
+      const promotion = {
+        percentage: 0.3,
+        minimum: 5000,
+      }
+
+      cart = updateQuantity(cart, shirt, 3)
+      
+      expect(getTotal(cart, promotion).getAmount()).toEqual(6300)
+    });
+  })
 })
+
